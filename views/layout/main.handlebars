@@ -12,7 +12,24 @@
             <header>
                 <nav>
                     <a href="/">Home</a>
+                    <a href="/profile">Posts</a>
+                    {{#if loggedIn}}
+                    <a href="/login">Login</a> |
+                    <button class="no-button" id="logout">logout</button>
+                    {{else}}
+                    <a href="/">logout</a>
+                    {{/if}}
                 </nav>
+                <h1>Tech blog Site!</h1>
             </header>
+
+            <main class="container container-fluid mt-5">
+                {{{body}}}
+            </main>
+
+            <footer>
+            </footer>
+            {{#if loggedIn}}
+            <script src="../../public/js/style/logout.js"></script>
     </body>
 </html>
