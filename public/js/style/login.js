@@ -11,5 +11,13 @@ const logIn = async(event) => {
             headers: {
                 'Content-Type': 'application/json'},
         });
+
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('error with logging in, please try again')
+        }
     }
  }
+
+ document.querySelector('login-form').addEventListener('submit', logIn);
